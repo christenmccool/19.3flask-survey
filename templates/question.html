@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Question {{q_num}}{% endblock %}
+
+{% block heading %}Question {{q_num}}{% endblock %}
+
+{% block main %}
+
+    <div class="main_text">
+    {{question_obj.question}}
+    </div>
+
+    <form action="/answer" method="POST">
+    {% for option in question_obj.choices %}
+        <div class="option">
+            <label>
+                <input type="radio" name="option" value={{option}} required>{{option}}
+            </label>
+        </div>
+    {% endfor %}
+
+        <input type="hidden" name="q_num" value={{q_num}}>
+        <button>Submit</button>
+    </form>
+
+{% endblock %}
+
