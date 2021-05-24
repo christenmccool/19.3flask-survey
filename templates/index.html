@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Select Survey{% endblock %}
+
+{% block heading %}Select survey{% endblock %}
+
+{% block main %}
+
+    <div class="instructions">
+        Select the survey you would like to take.
+    </div>
+
+    <form action="/start" method="POST">
+    {% for code,survey in surveys.items() %}
+        <div class="option">
+            <label><input type="radio" name="survey_choice" value="{{code}}" required>{{survey.title}}</label>
+        </div>
+    {% endfor %}
+        <button>Submit</button>
+    </form>
+
+{% endblock %}

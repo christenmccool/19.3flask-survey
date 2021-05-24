@@ -11,13 +11,22 @@
     </div>
 
     <form action="/answer" method="POST">
-    {% for option in question_obj.choices %}
+        {% for option in question_obj.choices %}
         <div class="option">
             <label>
                 <input type="radio" name="option" value={{option}} required>{{option}}
             </label>
         </div>
-    {% endfor %}
+        {% endfor %}
+
+        {% if question_obj.allow_text %}
+        <div class="text">
+            <label>Comments (optional):
+                <textarea name="comment" rows="4"></textarea>
+            </label>
+        </div>
+
+        {% endif %}
 
         <input type="hidden" name="q_num" value={{q_num}}>
         <button>Submit</button>

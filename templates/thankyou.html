@@ -10,4 +10,16 @@
     Thank you!
     </div>
 
+    <ul>
+    {% for num in range(questions|length) %}
+        <li>
+            <strong>{{questions[num].question}}</strong>
+            {{session["responses"][num]}}   
+            {% if session["comments"][num] %}
+            <em>{{session["comments"][num]}}</em>
+            {% endif %}
+        </li>
+    {% endfor %}
+    </ul>
+
 {% endblock %}

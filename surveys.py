@@ -39,6 +39,9 @@ personality_quiz = Survey(
     "Learn more about yourself with our personality quiz!",
     [
         Question("Do you ever dream about code?"),
+        Question("Single quote or double quotes?", 
+                ["Single quotes", "Double quotes"], 
+                allow_text=True),
         Question("Do you ever have nightmares about code?"),
         Question("Do you prefer porcupines or hedgehogs?",
                  ["Porcupines", "Hedgehogs"]),

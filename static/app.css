@@ -30,8 +30,28 @@ h1 {
     font-size: 40px;
 }
 
+.text {
+    font-size: 30px;
+}
+
+textarea {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+}
+
 input {
     margin: 0 10px 0 0;
+    vertical-align: middle;
+    margin-top: -5px;
+}
+
+
+li {
+    list-style-type: none;
 }
 
 form {
@@ -54,3 +74,4 @@ button {
     padding: 10px;
     background-color: #f8961e;
 }
+
